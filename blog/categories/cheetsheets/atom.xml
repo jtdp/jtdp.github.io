@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cheetsheets | jtdp]]></title>
   <link href="http://jtdp.github.io/blog/categories/cheetsheets/atom.xml" rel="self"/>
   <link href="http://jtdp.github.io/"/>
-  <updated>2013-04-24T01:50:46+01:00</updated>
+  <updated>2013-04-24T20:11:13+01:00</updated>
   <id>http://jtdp.github.io/</id>
   <author>
     <name><![CDATA[John Pemberton]]></name>
@@ -58,6 +58,13 @@
 <h2>Change remote url of git repository</h2>
 
 <p><div><script src='https://gist.github.com/5443290.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<h2>SSL Certificate Verification</h2>
+
+<p>If you get the error: SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed while accessing... you need to set GIT_SSL_NO_VERIFY to true.
+<div><script src='https://gist.github.com/5452285.js'></script>
 <noscript><pre><code></code></pre></noscript></div>
 </p>
 ]]></content>
