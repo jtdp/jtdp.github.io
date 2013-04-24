@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | jtdp]]></title>
   <link href="http://jtdp.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://jtdp.github.io/"/>
-  <updated>2013-04-24T00:37:14+01:00</updated>
+  <updated>2013-04-24T01:13:05+01:00</updated>
   <id>http://jtdp.github.io/</id>
   <author>
     <name><![CDATA[John Pemberton]]></name>
@@ -19,6 +19,9 @@
     <updated>2013-04-23T20:21:00+01:00</updated>
     <id>http://jtdp.github.io/blog/2013/04/23/installing-octopress-on-windows-7</id>
     <content type="html"><![CDATA[<p><a href="http://octopress.org">Octopress</a> is a pretty sweet blogging framework built on <a href="http://jekyllrb.com/">Jekyll</a>.  It's a nice bit of kit that can easily be set up to create and deploy a blog to Github or your own server / webhost.  I wanted to be able to use it from my Windows 7 laptop, so I googled around and figured out how to get everything set up.  For reference - and in the likely event that I forget how I did it, I'm posting my findings in this - my first Octopress post.</p>
+
+<!-- more -->
+
 
 <h2>Git Installation</h2>
 
@@ -123,13 +126,22 @@ rake deploy
 
 <p>You should then be able to see it at your Github pages url: <em>http://username.github.io</em></p>
 
-<blockquote><p>Note: The <code>rake generate</code> command, takes the source code for the blog and turns it into good old html, css and javascript.  The <code>rake deploy command</code> fires the generated files up to git.</p></blockquote>
+<blockquote><p>Note: The <code>rake generate</code> command, takes the source code for the blog and turns it into good old html, css and javascript.  The <code>rake deploy command</code> fires the generated files up to the master branch of your git repository from where they are published in Git Pages.</p></blockquote>
 
-<p>To commit the actual source files to git, we need to do the following:
+<p>We also want to commit the source files for the blog to the source branch of the repository:
 <code>
 git add .
 git commit -m 'your message'
 git push origin source
+</code></p>
+
+<h2>Do the Work</h2>
+
+<p>So far we've got an empty, uncustomized blog.  Time to make it yours and add some content.
+Head over to the Octopress <a href="http://octopress.org/docs/configuring">Basic Configuration</a> and <a href="http://octopress.org/docs/blogging/">Blogging Basics</a> pages to get you going.  Just remember, when you've changed content or configuration and want to publish to your Github Pages site, run:
+<code>
+rake generate
+rake deploy
 </code></p>
 ]]></content>
   </entry>

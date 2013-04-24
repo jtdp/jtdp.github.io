@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git | jtdp]]></title>
+  <link href="http://jtdp.github.io/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://jtdp.github.io/"/>
+  <updated>2013-04-24T01:13:05+01:00</updated>
+  <id>http://jtdp.github.io/</id>
+  <author>
+    <name><![CDATA[John Pemberton]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git Cheatsheet]]></title>
+    <link href="http://jtdp.github.io/blog/2013/04/24/git-cheatsheet/"/>
+    <updated>2013-04-24T00:57:00+01:00</updated>
+    <id>http://jtdp.github.io/blog/2013/04/24/git-cheatsheet</id>
+    <content type="html"><![CDATA[<p>Random git snippets to make my life easier.</p>
+
+<!-- more -->
+
+
+<h2>Adding a submodule to a git repository</h2>
+
+<p><div><script src='https://gist.github.com/5443442.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<h2>Cloning a git repository with submodules</h2>
+
+<p><div><script src='https://gist.github.com/5443429.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<h2>Git remove file but keep local copy.</h2>
+
+<blockquote><p>Note that when other repository clones pull from the same remote, their local copy of the file will be deleted unless they have modified it.
+<div><script src='https://gist.github.com/5443305.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p></blockquote>
+
+<h2>Revert file permission changes in local git repository</h2>
+
+<p>Very useful when you change permissions due to working on a samba share. Lifted from <a href="http://stackoverflow.com/questions/2517339/git-how-to-recover-the-file-permissions-git-thinks-the-file-should-be">Stack Overflow</a>
+<div><script src='https://gist.github.com/5443498.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<h2>See changes before pulling from remote git repository</h2>
+
+<p><div><script src='https://gist.github.com/5443297.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+
+<h2>Change remote url of git repository</h2>
+
+<p><div><script src='https://gist.github.com/5443290.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

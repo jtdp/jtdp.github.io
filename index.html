@@ -9,7 +9,7 @@
   <meta name="author" content="John Pemberton">
 
   
-  <meta name="description" content="Octopress is a pretty sweet blogging framework built on Jekyll. It&#8217;s a nice bit of kit that can easily be set up to create and deploy a blog to &hellip;">
+  <meta name="description" content="Random git snippets to make my life easier. ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +71,47 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/04/24/git-cheatsheet/">Git Cheatsheet</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-24T00:57:00+01:00" pubdate data-updated="true">Apr 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Random git snippets to make my life easier.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/04/24/git-cheatsheet/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/04/23/installing-octopress-on-windows-7/">Installing Octopress on Windows 7</a></h1>
     
     
@@ -96,140 +137,12 @@
 
   <div class="entry-content"><p><a href="http://octopress.org">Octopress</a> is a pretty sweet blogging framework built on <a href="http://jekyllrb.com/">Jekyll</a>.  It&#8217;s a nice bit of kit that can easily be set up to create and deploy a blog to Github or your own server / webhost.  I wanted to be able to use it from my Windows 7 laptop, so I googled around and figured out how to get everything set up.  For reference - and in the likely event that I forget how I did it, I&#8217;m posting my findings in this - my first Octopress post.</p>
 
-<h2>Git Installation</h2>
-
-<p>First up, we need git.  Grab github for windows from <a href="https://help.github.com/articles/set-up-git">github</a> and run the install.<br/>
-I&#8217;m keeping my projects in <em>C:\Users\John\Documents\GitHub</em>.  Open up a cmd terminal, cd to wherever you set your git projects directory to be, and test that git is working.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd C:\&lt;path-to-git-projects&gt;
-</span><span class='line'>git --version</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Yari installation</h2>
-
-<p><a href="https://github.com/scottmuc/yari">Yari</a> is <em>Yet Another Ruby Installer</em>.  Basically, it helps you to install different versions of <a href="http://www.ruby-lang.org/">Ruby</a> on your system and is very easy to use in a Windows environment.<br/>
-Installing Yari is pretty damn easy now we have git installed.  If you aren&#8217;t there already, cd to your git projects directory and run:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd C:\&lt;path-to-git-projects&gt;
-</span><span class='line'>git clone git://github.com/scottmuc/yari.git yari</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-All you need to do now is add the yari executable to your path.  If you&#8217;re not sure how to do this, follow the steps below:</p>
-
-<ul>
-<li>Left click <em>Start</em>, right click <em>Computer</em>, left click <em>Properties</em></li>
-<li>Left click <em>Advanced system settings</em></li>
-<li>Left click <em>Environment Variables</em></li>
-<li>In the <em>System Variables</em> list, find <em>Path</em>, select it and left click <em>Edit</em></li>
-<li>Add <code>;C:\&lt;path-to-git-projects&gt;\yari\bin\yari</code> to the end of it - not forgetting the semi-colon at the beginning and click <em>Ok</em> to close the <em>Environment Variables</em> window.</li>
-<li>Click <em>Ok</em> on the <em>Advanced system settings</em> window to close that.  You can also close the <em>System</em> window.</li>
-<li>Close your terminal and reopen it to reload the changed path.  Type  <em>yari</em> to test it is working.</li>
-</ul>
-
-
-<h2>Ruby installation</h2>
-
-<p>Now we have yari, installing Ruby is superfantastically easy.  We&#8217;re going to install version 1.9.3.  At the command prompt type:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yari 1.9.3</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The first time this is run, it can take a few minutes as it will need to download and install that version of Ruby.  It doesn&#8217;t give you much feedback while it does, so be patient!  Once done, check it worked with:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ruby --version</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>Note: If you open a new terminal later on today, tomorrow or next week, you need to type yari 1.9.3 again to set the Ruby version for that session.  As it was already installed the first time the command was run, it takes no time at all when run on subsequent occasions.</p></blockquote>
-
-<h2>Octopress installation</h2>
-
-<p>Octopress is hosted on Github, so its just a matter of cloning it and running a few commands to get it rolling.  There&#8217;s a <a href="http://octopress.org/docs/setup/">set up guide</a> on the Octopress site which is worth a look if you need any help.
-Clone the Repo</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd C:\&lt;path-to-git-projects&gt;
-</span><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Install Dependencies</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
-</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Set Up Octopress with the Default Theme</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Take a Look</h3>
-
-<p>At this point you have an empty Octopress blog.  To see what it looks like, we can fire up the built-in development webserver using the following command:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now, point your browser at <a href="http://localhost:4000">http://localhost:4000</a> to see what all the fuss is about.</p>
-
-<h2>The World Wide Web</h2>
-
-<p>The built-in development server is a super useful tool for developing your blog and previewing content before you publish it, but it ain&#8217;t going to make you famous.  Fortunately, deploying this baby is a piece of proverbial cake.  I&#8217;m using <a href="http://pages.github.com/">Github Pages</a> for hosting my Octopress blog: it&#8217;s easy, they have a marginally better server stack than I have and it doesn&#8217;t me cost a penny.  Again, there&#8217;s a <a href="http://octopress.org/docs/deploying/github/">guide</a> on Octopress about how to set this up.</p>
-
-<h3>Get a Github Account</h3>
-
-<p>If you don&#8217;t already have one, sign up <a href="https://github.com/">here</a></p>
-
-<h3>Create a Repo</h3>
-
-<p>Create a repository to put your blog in.  As per <a href="https://help.github.com/articles/user-organization-and-project-pages">this page</a>, your repository should be named according to the scheme <code>username/username.github.io</code>.  Your blog will be accessible at the url: <em>http://username.github.io</em></p>
-
-<h3>Do the Magic</h3>
-
-<p>From your Octopress project directory, run the following command:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
-
-
-<p>When asked, enter your the repository url that you just created.  This will be in the form <code>git@github.com:username/username.github.io.git</code></p>
-
-<p>To publish your blog to Github pages use:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You should then be able to see it at your Github pages url: <em>http://username.github.io</em></p>
-
-<blockquote><p>Note: The <code>rake generate</code> command, takes the source code for the blog and turns it into good old html, css and javascript.  The <code>rake deploy command</code> fires the generated files up to git.</p></blockquote>
-
-<p>To commit the actual source files to git, we need to do the following:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
-</span><span class='line'>git commit -m 'your message'
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/04/23/installing-octopress-on-windows-7/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -246,6 +159,10 @@ Clone the Repo</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/24/git-cheatsheet/">Git Cheatsheet</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/23/installing-octopress-on-windows-7/">Installing Octopress On Windows 7</a>

@@ -93,6 +93,9 @@
 
 <div class="entry-content"><p><a href="http://octopress.org">Octopress</a> is a pretty sweet blogging framework built on <a href="http://jekyllrb.com/">Jekyll</a>.  It&#8217;s a nice bit of kit that can easily be set up to create and deploy a blog to Github or your own server / webhost.  I wanted to be able to use it from my Windows 7 laptop, so I googled around and figured out how to get everything set up.  For reference - and in the likely event that I forget how I did it, I&#8217;m posting my findings in this - my first Octopress post.</p>
 
+<!-- more -->
+
+
 <h2>Git Installation</h2>
 
 <p>First up, we need git.  Grab github for windows from <a href="https://help.github.com/articles/set-up-git">github</a> and run the install.<br/>
@@ -214,9 +217,9 @@ Clone the Repo</p>
 
 <p>You should then be able to see it at your Github pages url: <em>http://username.github.io</em></p>
 
-<blockquote><p>Note: The <code>rake generate</code> command, takes the source code for the blog and turns it into good old html, css and javascript.  The <code>rake deploy command</code> fires the generated files up to git.</p></blockquote>
+<blockquote><p>Note: The <code>rake generate</code> command, takes the source code for the blog and turns it into good old html, css and javascript.  The <code>rake deploy command</code> fires the generated files up to the master branch of your git repository from where they are published in Git Pages.</p></blockquote>
 
-<p>To commit the actual source files to git, we need to do the following:</p>
+<p>We also want to commit the source files for the blog to the source branch of the repository:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -224,6 +227,19 @@ Clone the Repo</p>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git add .
 </span><span class='line'>git commit -m 'your message'
 </span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Do the Work</h2>
+
+<p>So far we&#8217;ve got an empty, uncustomized blog.  Time to make it yours and add some content.
+Head over to the Octopress <a href="http://octopress.org/docs/configuring">Basic Configuration</a> and <a href="http://octopress.org/docs/blogging/">Blogging Basics</a> pages to get you going.  Just remember, when you&#8217;ve changed content or configuration and want to publish to your Github Pages site, run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
 
 </div>
 
@@ -271,6 +287,8 @@ Clone the Repo</p>
     <p class="meta">
       
       
+        <a class="basic-alignment right" href="/blog/2013/04/24/git-cheatsheet/" title="Next Post: Git Cheatsheet">Git Cheatsheet &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -282,6 +300,10 @@ Clone the Repo</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/24/git-cheatsheet/">Git Cheatsheet</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/23/installing-octopress-on-windows-7/">Installing Octopress On Windows 7</a>

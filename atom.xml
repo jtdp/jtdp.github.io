@@ -4,7 +4,7 @@
   <title><![CDATA[jtdp]]></title>
   <link href="http://jtdp.github.io/atom.xml" rel="self"/>
   <link href="http://jtdp.github.io/"/>
-  <updated>2013-04-24T00:37:14+01:00</updated>
+  <updated>2013-04-24T01:13:05+01:00</updated>
   <id>http://jtdp.github.io/</id>
   <author>
     <name><![CDATA[John Pemberton]]></name>
@@ -14,11 +14,66 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Git Cheatsheet]]></title>
+    <link href="http://jtdp.github.io/blog/2013/04/24/git-cheatsheet/"/>
+    <updated>2013-04-24T00:57:00+01:00</updated>
+    <id>http://jtdp.github.io/blog/2013/04/24/git-cheatsheet</id>
+    <content type="html"><![CDATA[<p>Random git snippets to make my life easier.</p>
+
+<!-- more -->
+
+
+<h2>Adding a submodule to a git repository</h2>
+
+<div><script src='https://gist.github.com/5443442.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<h2>Cloning a git repository with submodules</h2>
+
+<div><script src='https://gist.github.com/5443429.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<h2>Git remove file but keep local copy.</h2>
+
+<blockquote><p>Note that when other repository clones pull from the same remote, their local copy of the file will be deleted unless they have modified it.</p></blockquote>
+
+<div><script src='https://gist.github.com/5443305.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<h2>Revert file permission changes in local git repository</h2>
+
+<p>Very useful when you change permissions due to working on a samba share. Lifted from <a href="http://stackoverflow.com/questions/2517339/git-how-to-recover-the-file-permissions-git-thinks-the-file-should-be">Stack Overflow</a></p>
+
+<div><script src='https://gist.github.com/5443498.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<h2>See changes before pulling from remote git repository</h2>
+
+<div><script src='https://gist.github.com/5443297.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+<h2>Change remote url of git repository</h2>
+
+<div><script src='https://gist.github.com/5443290.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Installing Octopress On Windows 7]]></title>
     <link href="http://jtdp.github.io/blog/2013/04/23/installing-octopress-on-windows-7/"/>
     <updated>2013-04-23T20:21:00+01:00</updated>
     <id>http://jtdp.github.io/blog/2013/04/23/installing-octopress-on-windows-7</id>
     <content type="html"><![CDATA[<p><a href="http://octopress.org">Octopress</a> is a pretty sweet blogging framework built on <a href="http://jekyllrb.com/">Jekyll</a>.  It&#8217;s a nice bit of kit that can easily be set up to create and deploy a blog to Github or your own server / webhost.  I wanted to be able to use it from my Windows 7 laptop, so I googled around and figured out how to get everything set up.  For reference - and in the likely event that I forget how I did it, I&#8217;m posting my findings in this - my first Octopress post.</p>
+
+<!-- more -->
+
 
 <h2>Git Installation</h2>
 
@@ -141,9 +196,9 @@ Clone the Repo</p>
 
 <p>You should then be able to see it at your Github pages url: <em>http://username.github.io</em></p>
 
-<blockquote><p>Note: The <code>rake generate</code> command, takes the source code for the blog and turns it into good old html, css and javascript.  The <code>rake deploy command</code> fires the generated files up to git.</p></blockquote>
+<blockquote><p>Note: The <code>rake generate</code> command, takes the source code for the blog and turns it into good old html, css and javascript.  The <code>rake deploy command</code> fires the generated files up to the master branch of your git repository from where they are published in Git Pages.</p></blockquote>
 
-<p>To commit the actual source files to git, we need to do the following:</p>
+<p>We also want to commit the source files for the blog to the source branch of the repository:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -151,6 +206,19 @@ Clone the Repo</p>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git add .
 </span><span class='line'>git commit -m 'your message'
 </span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Do the Work</h2>
+
+<p>So far we&#8217;ve got an empty, uncustomized blog.  Time to make it yours and add some content.
+Head over to the Octopress <a href="http://octopress.org/docs/configuring">Basic Configuration</a> and <a href="http://octopress.org/docs/blogging/">Blogging Basics</a> pages to get you going.  Just remember, when you&#8217;ve changed content or configuration and want to publish to your Github Pages site, run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
 
 ]]></content>
   </entry>
